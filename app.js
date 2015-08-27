@@ -20,7 +20,7 @@ var hour = document.getElementById('hours'),
 // Gets current time and sets the interval
 var start = function() {
   setTime = Date.now();
-  interval = setInterval(update, 100);
+  interval = setInterval(update, 10);
 };
 
 // This cancel the setInterval when called
@@ -52,7 +52,11 @@ var update = function() {
 
 // Converts the current time to miliseconds
 var updateScreen = function() {
-  miliseconds.innerText = timer/1000;
+  var time = timer/1000,
+      timeMiliSeconds = parseInt((time % 1) * 100);
+      timeSeconds = Math.floor(time);
+  miliseconds.innerText = timeMiliSeconds;
+  seconds.innerText = timeSeconds;
 };
 
 // Fires the start() when the #startButton is clicked

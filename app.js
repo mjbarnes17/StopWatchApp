@@ -54,7 +54,7 @@ var update = function() {
 var doubleDigit = function(num) {
   var numString = num.toString();
 
-  if (numString < 2) {
+  if (numString.length < 2) {
     return '0' + numString;
   } else {
     return numString;
@@ -72,7 +72,7 @@ var updateScreen = function() {
   miliseconds.innerText = doubleDigit(timeMiliSeconds);
   seconds.innerText = doubleDigit(timeSeconds);
   minutes.innerText = doubleDigit(timeMinutes);
-  hours.innerText = timeHours;
+  hours.innerText = doubleDigit(timeHours);
 };
 
 // Fires the start() when the #startButton is clicked

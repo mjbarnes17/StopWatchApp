@@ -61,6 +61,14 @@ var doubleDigit = function(num) {
   }
 };
 
+// When the number is gets over 60 the digits place will star over a 00
+var limitAtSixty = function(num) {
+  var newNum = Math.floor(num/60);
+  if (num/60 >= newNum) {
+    return num - 60 * newNum;
+  }
+};
+
 // Converts the current time to miliseconds
 var updateScreen = function() {
   var time = timer/1000,
@@ -70,8 +78,8 @@ var updateScreen = function() {
       timeHours = Math.floor(timeMinutes/60);
 
   miliseconds.innerText = doubleDigit(timeMiliSeconds);
-  seconds.innerText = doubleDigit(timeSeconds);
-  minutes.innerText = doubleDigit(timeMinutes);
+  seconds.innerText = doubleDigit(limitAtSixty(timeSeconds));
+  minutes.innerText = doubleDigit(limitAtSixty(timeMinutes));
   hours.innerText = doubleDigit(timeHours);
 };
 

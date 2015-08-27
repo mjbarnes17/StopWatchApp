@@ -28,6 +28,12 @@ var pause = function() {
   clearInterval(interval);
 };
 
+// This cancels & sets the timer to 0
+var stop = function() {
+  clearInterval(interval);
+  timer = 0;
+}
+;
 // Updates the current time
 var update = function() {
   currentTime = Date.now();
@@ -47,3 +53,5 @@ var updateScreen = function() {
 startButton.addEventListener('click', start);
 // Fires the pause() when the #pauseButton is clicked
 pauseButton.addEventListener('click', pause);
+// Fires the stop() when the #stopButton is clicked
+stopButton.addEventListener('click', stop);

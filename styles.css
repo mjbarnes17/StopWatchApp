@@ -1,0 +1,62 @@
+/********** BODY ************/
+
+body{
+  color: #000;
+  font-family: sans-serif;
+  font-weight: 100;
+  padding:0px;
+}
+
+/********** STOPWATCH ************/
+
+.stopwatch{
+  margin: auto;
+  width: 402px;
+  height: 186px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  overflow: hidden;
+  padding: 30px;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+/********** CONTROLS ************/
+
+.controls {
+  margin: 0 auto;
+  width: 260px;
+  display: block;
+  clear: both;
+}
+
+.controls button {
+  background-color: #fff;
+  border: 1.5px solid #01ff70;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 25px;
+  color: #01ff70;
+}
+
+.controls button:hover {
+  background-color: #01ff70;
+  border: 1.5px solid #01ff70;
+  color: #fff;
+}
+
+/********** DIGITS ************/
+
+.digit {
+  width: 55px;
+}
+
+.digit-space {
+  float: left;
+  padding: 5px;
+  text-align: center;
+  font-size: 50px;
+}

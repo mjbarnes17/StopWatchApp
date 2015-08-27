@@ -14,12 +14,18 @@ var hour = document.getElementById('hours'),
     setTime,
     currentTime,
     difference,
-    timer = 0;
+    timer = 0,
+    interval;
 
 // Gets current time and sets the interval
 var start = function() {
   setTime = Date.now();
-  setInterval(update, 100);
+  interval = setInterval(update, 100);
+};
+
+// This cancel the setInterval when called
+var pause = function() {
+  clearInterval(interval);
 };
 
 // Updates the current time
@@ -32,9 +38,12 @@ var update = function() {
   setTime = currentTime;
 };
 
-// Converts the current time to miliseconds 
+// Converts the current time to miliseconds
 var updateScreen = function() {
   miliseconds.innerText = timer/1000;
 };
 
+// Fires the start() when the #startButton is clicked
 startButton.addEventListener('click', start);
+// Fires the pause() when the #pauseButton is clicked
+pauseButton.addEventListener('click', pause);

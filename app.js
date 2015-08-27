@@ -50,6 +50,17 @@ var update = function() {
   setTime = currentTime;
 };
 
+// Sets all digit value to be double digits even when under 10
+var doubleDigit = function(num) {
+  var numString = num.toString();
+
+  if (numString < 2) {
+    return '0' + numString;
+  } else {
+    return numString;
+  }
+};
+
 // Converts the current time to miliseconds
 var updateScreen = function() {
   var time = timer/1000,
@@ -57,9 +68,10 @@ var updateScreen = function() {
       timeSeconds = Math.floor(time);
       timeMinutes = Math.floor(timeSeconds/60);
       timeHours = Math.floor(timeMinutes/60);
-  miliseconds.innerText = timeMiliSeconds;
-  seconds.innerText = timeSeconds;
-  minutes.innerText = timeMinutes;
+
+  miliseconds.innerText = doubleDigit(timeMiliSeconds);
+  seconds.innerText = doubleDigit(timeSeconds);
+  minutes.innerText = doubleDigit(timeMinutes);
   hours.innerText = timeHours;
 };
 

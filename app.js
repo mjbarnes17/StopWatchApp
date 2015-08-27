@@ -55,8 +55,12 @@ var updateScreen = function() {
   var time = timer/1000,
       timeMiliSeconds = parseInt((time % 1) * 100);
       timeSeconds = Math.floor(time);
+      timeMinutes = Math.floor(timeSeconds/60);
+      timeHours = Math.floor(timeMinutes/60);
   miliseconds.innerText = timeMiliSeconds;
   seconds.innerText = timeSeconds;
+  minutes.innerText = timeMinutes;
+  hours.innerText = timeHours;
 };
 
 // Fires the start() when the #startButton is clicked

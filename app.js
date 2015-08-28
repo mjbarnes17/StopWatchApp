@@ -39,6 +39,7 @@ var enableStartButton = function() {
 // This cancel the setInterval when called
 var pause = function() {
   clearInterval(interval);
+  enableStartButton();
 };
 
 // This cancels & sets the timer to 0 then enables start button
@@ -52,6 +53,7 @@ var stop = function() {
 var reset = function() {
   timer = 0;
   updateScreen();
+  enableStartButton();
 };
 
 // Updates the current time

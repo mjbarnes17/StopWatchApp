@@ -1,4 +1,6 @@
-// Globals
+// By Marcus Barnes
+
+// GLOBALS
 // Grabs the id's for digits
 var hour = document.getElementById('hours'),
     minutes = document.getElementById('minutes'),
@@ -17,10 +19,21 @@ var hour = document.getElementById('hours'),
     timer = 0,
     interval;
 
-// Gets current time and sets the interval
+// Gets current time and sets the interval then disables start button
 var start = function() {
   setTime = Date.now();
   interval = setInterval(update, 10);
+  disableStartButton();
+};
+
+// Disables the start button
+var disableStartButton = function() {
+  startButton.disabled = true;
+};
+
+// Enables start button
+var enableStartButton = function() {
+  startButton.disabled = false;
 };
 
 // This cancel the setInterval when called
@@ -28,10 +41,11 @@ var pause = function() {
   clearInterval(interval);
 };
 
-// This cancels & sets the timer to 0
+// This cancels & sets the timer to 0 then enables start button
 var stop = function() {
   clearInterval(interval);
   timer = 0;
+  enableStartButton();
 };
 
 // This sets timer to 0 then calls updateScreen() to show a new time
